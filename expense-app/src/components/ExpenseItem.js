@@ -1,4 +1,3 @@
-import "./ExpenseItem.css";
 import { Card } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
 
