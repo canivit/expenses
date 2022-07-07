@@ -2,7 +2,7 @@ import "./ExpenseItem.css";
 import { Card } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   const date = props.date;
   const dateString = formatDateAsString(date);
   const title = props.title;
@@ -25,7 +25,7 @@ function ExpenseItem(props) {
   );
 }
 
-function formatDateAsString(date) {
+const formatDateAsString = (date) => {
   return date.toLocaleString("en-US", {
     day: "numeric",
     month: "long",

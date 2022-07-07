@@ -1,6 +1,6 @@
 import ExpenseList from "./components/ExpenseList";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       title: "New Macbook Pro M1 Pro 16in Laptop",
