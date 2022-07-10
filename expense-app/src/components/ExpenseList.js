@@ -5,7 +5,7 @@ const ExpenseList = (props) => {
   const expenses = props.expenses;
 
   return (
-    <Container className="mt-4 py-3 bg-secondary rounded-3">
+    <Container className="mt-4 py-3 bg-light border border-secondary border-1 rounded-3">
       {expenses.map((item) => (
         <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
       ))}
