@@ -1,15 +1,12 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
+import { Button, Col, Row, Form } from "react-bootstrap";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
 
-  const titleChangeHandler = (event) => {
+  const titleChangedHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
 
@@ -45,7 +42,7 @@ const ExpenseForm = (props) => {
         <Form.Control
           type="text"
           placeholder="Enter expense title"
-          onChange={titleChangeHandler}
+          onChange={titleChangedHandler}
           value={enteredTitle}
         />
       </Form.Group>

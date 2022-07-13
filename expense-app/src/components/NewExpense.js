@@ -7,7 +7,7 @@ const NewExpense = (props) => {
   };
 
   return (
-    <Container className="mt-4 p-3 bg-light border border-secondary border-1 rounded-3">
+    <Container className="p-3 bg-light border border-secondary border-1 rounded-3">
       <ExpenseForm onFormSubmit={formSubmitHandler} />
     </Container>
   );
