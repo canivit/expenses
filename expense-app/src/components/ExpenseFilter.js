@@ -2,7 +2,7 @@ import { FormSelect, Row, Col } from "react-bootstrap";
 
 const ExpenseFilter = (props) => {
   const selectionChangedHandler = (event) => {
-    props.onSelectedYearChanged(event.target.value);
+    props.onSelectedYearChanged(Number(event.target.value));
   };
 
   return (
@@ -13,9 +13,10 @@ const ExpenseFilter = (props) => {
           value={props.selectedYear}
           onChange={selectionChangedHandler}
         >
-          <option value={2021}>2021</option>
-          <option value={2022}>2022</option>
           <option value={2023}>2023</option>
+          <option value={2022}>2022</option>
+          <option value={2021}>2021</option>
+          <option value={2020}>2020</option>
         </FormSelect>
       </Col>
     </Row>

@@ -53,8 +53,8 @@ const ExpenseForm = (props) => {
           <Form.Control
             type="date"
             placeholder="Enter expense date"
-            min="2021-01-01"
-            max="2023-12-31"
+            min="2020-01-01"
+            max="2022-12-31"
             onChange={dateChangedHandler}
             value={enteredDate}
           />

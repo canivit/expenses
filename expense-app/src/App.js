@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 import ExpenseList from "./components/ExpenseList";
 import NewExpense from "./components/NewExpense";
 
@@ -19,23 +20,30 @@ const INITIAL_EXPENSES = [
 
   {
     id: 3,
-    title: "Apartment Rent",
-    amount: 2200,
-    date: new Date(2022, 2, 13),
+    title: "Dell Precision 5560",
+    amount: 2675,
+    date: new Date(2021, 9, 16),
   },
 
   {
     id: 4,
-    title: "AllSaints Leather Jacket",
-    amount: 1368.72,
-    date: new Date(2022, 4, 9),
+    title: "Apartment Rent",
+    amount: 2200,
+    date: new Date(2021, 4, 9),
   },
 
   {
     id: 5,
+    title: "AllSaints Leather Jacket",
+    amount: 1368.72,
+    date: new Date(2021, 2, 13),
+  },
+
+  {
+    id: 6,
     title: "Verizon Pre Paid Plan Renewal",
     amount: 35,
-    date: new Date(2022, 5, 19),
+    date: new Date(2020, 5, 19),
   },
 ];
 
@@ -50,10 +58,10 @@ const App = () => {
   };
 
   return (
-    <div className="p-4">
+    <Container className="p-4">
       <NewExpense onAddExpense={addExpenseHandler} />
       <ExpenseList expenses={expenses} />
-    </div>
+    </Container>
   );
 };
 
