@@ -35,6 +35,10 @@ const ExpenseForm = (props) => {
     setEnteredAmount("");
   };
 
+  const cancelHandler = () => {
+    props.onCancel();
+  };
+
   return (
     <Form onSubmit={submitHandler}>
       <Form.Group className="mb-3" controlId="expenseTitle">
@@ -76,6 +80,10 @@ const ExpenseForm = (props) => {
 
       <Button variant="primary" type="submit">
         Add New Expense
+      </Button>
+
+      <Button variant="danger" className="mx-2" onClick={cancelHandler}>
+        Cancel
       </Button>
     </Form>
   );

@@ -1,14 +1,35 @@
+import { useState } from "react";
 import { Container } from "react-bootstrap";
 import ExpenseForm from "./ExpenseForm";
+import NewExpenseButton from "./NewExpenseButton";
+
+const INITIAL_FORM_VISIBILITY = false;
 
 const NewExpense = (props) => {
+  const [formVisibility, setFormVisiblity] = useState(INITIAL_FORM_VISIBILITY);
+
   const formSubmitHandler = (submittedExpenseData) => {
     props.onAddExpense(submittedExpenseData);
+    hideFormHandler();
   };
+
+  const showFormHandler = () => {
+    setFormVisiblity(true);
+  };
+
+  const hideFormHandler = () => {
+    setFormVisiblity(false);
+  };
+
+  const content = formVisibility ? (
+    <ExpenseForm onFormSubmit={formSubmitHandler} onCancel={hideFormHandler} />
+  ) : (
+    <NewExpenseButton onNewExpense={showFormHandler}></NewExpenseButton>
+  );
 
   return (
     <Container className="p-3 bg-light border border-secondary border-1 rounded-3">
-      <ExpenseForm onFormSubmit={formSubmitHandler} />
+      {content}
     </Container>
   );
 };
