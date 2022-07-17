@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import ExpenseList from "./components/ExpenseList";
+import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense";
 
 const INITIAL_EXPENSES = [
@@ -60,7 +60,7 @@ const App = () => {
   return (
     <Container className="p-4">
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpenseList expenses={expenses} />
+      <Expenses expenses={expenses} />
     </Container>
   );
 };
