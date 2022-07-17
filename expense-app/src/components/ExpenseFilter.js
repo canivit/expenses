@@ -8,7 +8,7 @@ const ExpenseFilter = (props) => {
   return (
     <Row className="align-items-center my-2 mx-0 py-2 border border-1 rounded-3">
       <Col>Filter By Year</Col>
-      <Col md={2}>
+      <Col md={3}>
         <FormSelect
           value={props.selectedYear}
           onChange={selectionChangedHandler}

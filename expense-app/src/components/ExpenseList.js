@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Alert } from "react-bootstrap";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseChart from "./ExpenseChart";
 
 const INITIAL_SELECTED_YEAR = 2022;
 
@@ -39,6 +40,7 @@ const ExpenseList = (props) => {
         selectedYear={selectedYear}
         onSelectedYearChanged={selectedYearChangedHandler}
       />
+      <ExpenseChart expenses={filteredExpenses} />
       {expensesContent}
     </Container>
   );
