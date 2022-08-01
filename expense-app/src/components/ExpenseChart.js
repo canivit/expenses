@@ -34,7 +34,7 @@ const ExpenseChart = (props) => {
             dataKey="amount"
             name="Total Monthly Expense"
             stackId="a"
-            fill="#0d6efd"
+            fill="#5B5EA6"
           />
         </BarChart>
       </ResponsiveContainer>
