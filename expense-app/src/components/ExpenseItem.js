@@ -1,10 +1,15 @@
 import { Card, Badge, Row, Button, Container } from "react-bootstrap";
 
 const ExpenseItem = (props) => {
+  const id = props.id;
   const date = props.date;
   const dateString = formatDateAsString(date);
   const title = props.title;
   const amount = props.amount;
+
+  const handleRemoveClick = () => {
+    props.onRemoveExpense(id);
+  };
 
   return (
     <Card>
@@ -26,7 +31,7 @@ const ExpenseItem = (props) => {
                   </Button>
                 </div>
                 <div className="col-auto">
-                  <Button variant="danger">
+                  <Button variant="danger" onClick={handleRemoveClick}>
                     <i className="bi bi-trash-fill"></i>
                   </Button>
                 </div>

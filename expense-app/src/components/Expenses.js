@@ -24,7 +24,10 @@ const Expenses = (props) => {
         onSelectedYearChanged={selectedYearChangedHandler}
       />
       <ExpenseChart expenses={filteredExpenses} />
-      <ExpenseList expenses={filteredExpenses} />
+      <ExpenseList
+        expenses={filteredExpenses}
+        onRemoveExpense={props.onRemoveExpense}
+      />
     </Container>
   );
 };

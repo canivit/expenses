@@ -11,10 +11,16 @@ const App = () => {
     setExpenses((prevExpenses) => [...prevExpenses, newExpenseData]);
   };
 
+  const removeExpenseHandler = (id) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.filter((expense) => expense.id !== id)
+    );
+  };
+
   return (
     <Container className="p-4">
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={expenses} onRemoveExpense={removeExpenseHandler}/>
     </Container>
   );
 };
