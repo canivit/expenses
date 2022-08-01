@@ -2,9 +2,18 @@ import { useState } from "react";
 import { Button, Col, Row, Form } from "react-bootstrap";
 
 const ExpenseForm = (props) => {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
+  let title = "";
+  let date = "";
+  let amount = "";
+  if (props.expenseData != null) {
+    title = props.expenseData.title;
+    date = props.expenseData.date;
+    amount = props.expenseData.amount;
+  }
+
+  const [enteredTitle, setEnteredTitle] = useState(title);
+  const [enteredDate, setEnteredDate] = useState(date);
+  const [enteredAmount, setEnteredAmount] = useState(amount);
 
   const titleChangedHandler = (event) => {
     setEnteredTitle(event.target.value);

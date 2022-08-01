@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import ExpenseForm from "./ExpenseForm";
 import NewExpenseButton from "./NewExpenseButton";
+import { v4 as uuid } from "uuid";
 
 const INITIAL_FORM_VISIBILITY = false;
 
@@ -9,7 +10,7 @@ const NewExpense = (props) => {
   const [formVisibility, setFormVisiblity] = useState(INITIAL_FORM_VISIBILITY);
 
   const formSubmitHandler = (submittedExpenseData) => {
-    props.onAddExpense(submittedExpenseData);
+    props.onAddExpense({ ...submittedExpenseData, id: uuid() });
     hideFormHandler();
   };
 
